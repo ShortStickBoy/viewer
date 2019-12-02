@@ -66,7 +66,7 @@ dependencies {
     }
 ```
 
-#### 2. Create a java bean class implements ImageEntry.
+#### 2. Fill data and browse pictures.
 
 ```kotlin
 val data: ArrayList<Image> = ArrayList()
@@ -76,7 +76,7 @@ for (i in 0..10) {
 ImageViewer<Image>().setImages(data).setPosition(0).view(this)
 ```
 
-#### 3. Set Banner data and set OnItemClickListener, OnItemBindListener.
+#### 3. Custom theme.
 
 ### License
 ```
