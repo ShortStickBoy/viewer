@@ -29,52 +29,52 @@ dependencies {
 #### 1. Create a java bean class implements ImageEntry.
 
 ```kotlin
-    data class Image(var name: String?, var url: String?) : ImageEntry {
-    
-        override fun initImageUrl(): String? {
-            return url
-        }
-    
-        override fun initImageTxt(): String? {
-            return name
-        }
-    
+data class Image(var name: String?, var url: String?) : ImageEntry {
+
+    override fun initImageUrl(): String? {
+        return url
     }
+
+    override fun initImageTxt(): String? {
+        return name
+    }
+
+}
 ```
 
 #### 2. Fill data and browse pictures.
 
 ```kotlin
-    val data: ArrayList<Image> = ArrayList()
-    for (i in 0..10) {
-        data.add(
-            Image(
-                i.toString(),
-                "http://pic1.win4000.com/mobile/2019-11-22/5dd73dfccb5a7.jpg"
-            )
+val data: ArrayList<Image> = ArrayList()
+for (i in 0..10) {
+    data.add(
+        Image(
+            i.toString(),
+            "http://pic1.win4000.com/mobile/2019-11-22/5dd73dfccb5a7.jpg"
         )
-    }
-    ImageViewer<Image>().setImages(data).setPosition(0).view(this)
+    )
+}
+ImageViewer<Image>().setImages(data).setPosition(0).view(this)
 ```
 
 #### 3. Custom theme, improve UI display.
 
 ```xml
-    <resources>
-    
-        <!-- Base application theme. -->
-        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-            <!-- Customize your theme here. -->
-            <item name="colorPrimary">@color/colorPrimary</item>
-            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-            <item name="colorAccent">@color/colorAccent</item>
-        </style>
-    
-        <style name="ImageActivity" parent="AppTheme">
-            <item name="android:windowTranslucentStatus">true</item>
-        </style>
-    
-    </resources>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ImageActivity" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>
 ```
 
 ### License
