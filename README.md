@@ -3,6 +3,9 @@
 [![](https://jitpack.io/v/com.sunzn/viewer.svg)](https://jitpack.io/#com.sunzn/viewer)
 [![](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
+### ScreenShot
+![sample](./screen/001.gif)
+
 ### Gradle
 
 #### 1. Add the JitPack repository to your build file.
