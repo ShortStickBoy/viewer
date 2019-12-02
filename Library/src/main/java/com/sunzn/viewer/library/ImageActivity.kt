@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 
 class ImageActivity<T : ImageEntry> : AppCompatActivity() {
 
+    private var imageSite: Int = 0
     private var imageData: ArrayList<T>? = null
     private lateinit var imageHolder: ViewPager2
     private lateinit var imageMemo: AppCompatTextView
@@ -29,6 +30,7 @@ class ImageActivity<T : ImageEntry> : AppCompatActivity() {
 
     private fun initPara() {
         imageData = intent.getParcelableArrayListExtra<T>("data")
+        imageSite = intent.getIntExtra("position", 0)
     }
 
     private fun initView() {
@@ -43,6 +45,7 @@ class ImageActivity<T : ImageEntry> : AppCompatActivity() {
 
     private fun bindView() {
         imageHolder.adapter = imageAdapter
+        imageHolder.currentItem = imageSite
         imageHolder.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageScrolled(
                 position: Int,

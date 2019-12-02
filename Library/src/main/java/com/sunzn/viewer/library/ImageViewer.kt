@@ -26,6 +26,7 @@ class ImageViewer<T : ImageEntry> {
     private fun view(context: Context, clazz: Class<ImageActivity<T>>) {
         val intent = Intent(context, clazz)
         intent.putParcelableArrayListExtra("data", images)
+        intent.putExtra("position", position)
         context.startActivity(intent)
     }
 
