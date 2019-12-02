@@ -39,30 +39,6 @@ dependencies {
             return null
         }
     
-        constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readString()
-        )
-    
-        override fun writeToParcel(parcel: Parcel, flags: Int) {
-            parcel.writeString(name)
-            parcel.writeString(url)
-        }
-    
-        override fun describeContents(): Int {
-            return 0
-        }
-    
-        companion object CREATOR : Parcelable.Creator<Image> {
-            override fun createFromParcel(parcel: Parcel): Image {
-                return Image(parcel)
-            }
-    
-            override fun newArray(size: Int): Array<Image?> {
-                return arrayOfNulls(size)
-            }
-        }
-    
     }
 ```
 
