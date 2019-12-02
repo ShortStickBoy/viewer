@@ -5,6 +5,7 @@
 
 ### ScreenShot
 ![sample](./screen/001.gif)
+![sample](./screen/002.gif)
 
 ### Gradle
 
