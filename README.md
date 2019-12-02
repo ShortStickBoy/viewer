@@ -47,7 +47,12 @@ dependencies {
 ```kotlin
 val data: ArrayList<Image> = ArrayList()
 for (i in 0..10) {
-    data.add(Image(i.toString(), "http://pic1.win4000.com/mobile/2019-11-22/5dd73dfccb5a7.jpg"))
+    data.add(
+        Image(
+            i.toString(),
+            "http://pic1.win4000.com/mobile/2019-11-22/5dd73dfccb5a7.jpg"
+        )
+    )
 }
 ImageViewer<Image>().setImages(data).setPosition(0).view(this)
 ```
