@@ -4,8 +4,8 @@
 [![](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### ScreenShot
-![sample](./screen/001.gif)
-![sample](./screen/002.gif)
+![Sample](./screen/001.gif)
+![Sample](./screen/002.gif)
 
 ### Gradle
 
