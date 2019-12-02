@@ -24,6 +24,52 @@ dependencies {
 }
 ```
 
+### How to use
+
+#### 1. Create a java bean class implements ImageEntry.
+
+```kotlin
+    data class Image(var name: String?, var url: String?) : ImageEntry {
+    
+        override fun initImageUrl(): String? {
+            return url
+        }
+    
+        override fun initImageTxt(): String? {
+            return null
+        }
+    
+        constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString()
+        )
+    
+        override fun writeToParcel(parcel: Parcel, flags: Int) {
+            parcel.writeString(name)
+            parcel.writeString(url)
+        }
+    
+        override fun describeContents(): Int {
+            return 0
+        }
+    
+        companion object CREATOR : Parcelable.Creator<Image> {
+            override fun createFromParcel(parcel: Parcel): Image {
+                return Image(parcel)
+            }
+    
+            override fun newArray(size: Int): Array<Image?> {
+                return arrayOfNulls(size)
+            }
+        }
+    
+    }
+```
+
+#### 2. Create a java bean class implements ImageEntry.
+
+#### 3. Set Banner data and set OnItemClickListener, OnItemBindListener.
+
 ### License
 ```
     Copyright [2019-2020] sunzn
