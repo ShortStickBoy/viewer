@@ -14,7 +14,7 @@ class ImageAdapter<T : ImageEntry>(fragmentActivity: FragmentActivity) :
     }
 
     override fun getItemCount(): Int {
-        return data?.size ?: 10
+        return data?.size ?: 0
     }
 
     override fun createFragment(position: Int): Fragment {
