@@ -3,13 +3,17 @@ package com.sunzn.viewer.sample
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sunzn.viewer.library.ImageViewer
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        open.setOnClickListener { open() }
+    }
 
+    private fun open() {
         val data: ArrayList<Image> = ArrayList()
         for (i in 0..10) {
             when (i) {
@@ -98,4 +102,5 @@ class MainActivity : AppCompatActivity() {
 
         ImageViewer<Image>().setImages(data).setPosition(0).view(this)
     }
+
 }
