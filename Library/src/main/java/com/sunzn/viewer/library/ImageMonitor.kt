@@ -1,16 +1,20 @@
 package com.sunzn.viewer.library
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.github.chrisbanes.photoview.OnViewTapListener
 import com.github.chrisbanes.photoview.PhotoView
 
-class ImageMonitor<T : ImageEntry> : Fragment(), View.OnClickListener {
+class ImageMonitor<T : ImageEntry> : Fragment(), OnViewTapListener {
 
     lateinit var item: T
+
+    var listener: ImageListener? = null
 
     companion object {
         fun <T : ImageEntry> instance(item: T?): ImageMonitor<T> {
@@ -40,14 +44,24 @@ class ImageMonitor<T : ImageEntry> : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val image: PhotoView = view.findViewById(R.id.image)
-        image.maximumScale = 5F
+        image.setScaleLevels(1.0F, 2.5F, 5.0F)
+        image.setOnViewTapListener(this)
         Glide.with(image)
             .load(item.initImageUrl())
             .into(image)
     }
 
-    override fun onClick(v: View?) {
-        // TODO
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is ImageListener) {
+            listener = context
+        }
+    }
+
+    override fun onViewTap(view: View?, x: Float, y: Float) {
+        if (view != null && listener != null) {
+            listener?.onViewTouch()
+        }
     }
 
 }

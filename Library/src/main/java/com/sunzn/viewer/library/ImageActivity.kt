@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.viewpager2.widget.ViewPager2
 
-class ImageActivity<T : ImageEntry> : AppCompatActivity() {
+class ImageActivity<T : ImageEntry> : AppCompatActivity(), ImageListener {
 
     private var imageSite: Int = 0
     private var imageData: ArrayList<T>? = null
@@ -70,6 +70,10 @@ class ImageActivity<T : ImageEntry> : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onViewTouch() {
+        finish()
     }
 
 }
