@@ -24,7 +24,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.sunzn:viewer:1.0.3'
+    implementation 'com.sunzn:viewer:1.0.4'
 }
 ```
 
