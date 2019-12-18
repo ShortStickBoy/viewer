@@ -45,7 +45,6 @@ class ImageActivity<T : ImageEntry> : AppCompatActivity(), ImageListener {
 
     private fun bindView() {
         imageHolder.adapter = imageAdapter
-        imageHolder.setCurrentItem(imageSite, false)
         imageHolder.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageScrolled(
                 position: Int,
@@ -70,6 +69,7 @@ class ImageActivity<T : ImageEntry> : AppCompatActivity(), ImageListener {
                 }
             }
         })
+        imageHolder.setCurrentItem(imageSite, false)
     }
 
     override fun onViewTouch() {
